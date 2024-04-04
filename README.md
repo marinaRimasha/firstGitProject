@@ -1,6 +1,6 @@
 # README for the first repo created for IT Switcher school
 
-**This file contains a brief description of the differences between a few git commands widely used for getting data from a repository**	
+**This file contains a brief description and the differences between a few git commands widely used for getting data from a repository**
 
 ## Explanation of **`git pull`** and **`git fetch`** commands 
 
@@ -30,3 +30,49 @@ Both `git pull` and `git fetch` are Git commands used to retrieve changes from a
 
 
 _Both commands are essential when working with remote repositories in Git, and the choice between them depends on the specific situation and project requirements._
+
+
+## Explanation of **`git commit --amend`** command
+
+To add changes to a previous commit in Git, you can use the `git commit --amend` command. Here is a description of this command and how it works:
+
+### Description:
+
+The `git commit --amend` command allows you to modify the last commit in your Git history by adding new changes to it. This is useful when you want to include additional changes, fix a mistake, or update the commit message of the most recent commit.
+
+### How it works:
+
+1. **Stage the changes**:
+   First, stage the changes you want to add to the previous commit using `git add`.
+
+   ```bash
+   git add <modified_files>
+   ```
+
+2. **Run `git commit --amend`**:
+   After staging the changes, run the `git commit --amend` command.
+
+   ```bash
+   git commit --amend
+   ```
+
+   This will open your default text editor (such as Vim or Nano) to modify the commit message. You can update the commit message if needed. If you don't want to change the commit message, you can save and exit the editor without making any changes.
+
+3. **Save and exit the editor**:
+   If you didn't change the commit message, simply save and exit the editor. The changes will be added to the previous commit.
+
+4. **Push the changes**:
+   If you've already pushed the previous commit to a remote repository, you may need to force-push the updated commit to update the remote history.
+
+   ```bash
+   git push --force <remote_name> <branch_name>
+   ```
+
+   Replace `<remote_name>` with the name of your remote repository (e.g., `origin`) and `<branch_name>` with the branch where the commit is located.
+
+***Important notes:***
+
+- Use `git commit --amend` only for the most recent commit in your history. If you want to modify a commit further back in history, consider using interactive rebase (`git rebase -i`) instead.
+- Be cautious when using `git commit --amend` after pushing changes to a shared repository. Rewriting commit history can cause issues for collaborators. If others have already based their work on the previous commit, communicate with them and coordinate your changes accordingly.
+
+By using `git commit --amend`, you can add changes to a previous commit and maintain a clean and organized Git history.
