@@ -26,3 +26,6 @@ Thumbs.db
 
 # Ignore environment variables file
 .env
+
+#files with some sensitive data
+help.md
